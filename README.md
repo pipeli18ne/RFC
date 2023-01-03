@@ -41,7 +41,7 @@ Please go through those chapters if you are interested in. I'm looking forward t
  - Write something about the project, share it on social media etc.
  - Just talking with friends and co-workers about this project helps to get a variety of feedback.
  - Do you want to help shaping this project by coding? Just [let me know](https://github.com/pipeli18ne/RFC/discussions). I'm looking for help.
- - Do you want to sponsor this project. Head over to [open collective](https://opencollective.com/pipeli18ne) or use [GitHub Sponsors](https://github.com/sponsors/ivanhofer).
+ - Do you want to sponsor this project. You can use [GitHub Sponsors](https://github.com/sponsors/ivanhofer).
  - Something not listed here? [Open a new discussion](https://github.com/pipeli18ne/RFC/discussions).
 
 
