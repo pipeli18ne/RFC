@@ -208,6 +208,34 @@ A plugin knows about the framework and about the file the i18n code is being use
 
 > You still can write the code manually if you want. The automatic injection is just a convenience feature. If you would write the boilerplate code yourself, the plugin would not do anything and leave the code untouched.
 
+
+<!---------------------------------------------------------------------------------------------------------->
+
+## Build-time optimizations
+
+Because `pipeli18ne` deeply knows about your code and it's structure, it can transform the code to make it more efficient. Things that could be optimized are:
+ - removing unused translations from the dictionary
+ - minifying keys in your dictionary e.g. `dashboard.projects.title` could become `d.p.t` or simply `a`
+ - minifying variable names e.g. `Hello {firstName}` could become `Hello {n}`
+ - converting strings e.g.
+    - into JavaScript functions making the actual runtime very small
+      ```js
+      const title = `You have {nrOfProjects, plural,
+          one {1 project}
+          other {# projects}
+        }`
+      // could become
+      const title = (n) => 'You have ' + (n === 1 ? '1 project' : n + ' projects
+      ```
+    - or just converting the strings into a format that is more efficient in the browser to parse and render
+      ```js
+      const title = `You have {nrOfProjects, plural, one {1 project} other {# projects}}`
+      // could become
+      const title = `You have {nrOfProjects, p, 1 project, # projects}`
+      ```
+
+There are probably also other optimizations that could be done. Let me know in the [discussions](https://github.com/pipeli18ne/RFC/discussions) if you know some.
+
 <!---------------------------------------------------------------------------------------------------------->
 
 ## key-based translations vs. template-based translations
