@@ -68,7 +68,7 @@ This are the basics. Here is a short summary of the building blocks: [discuss he
 
 ### string extraction
 
-In order to benefit from automatic checks (e.g. is this translation still used?), we need a way to detect and extract internationalized parts from our source code. To do that we will define adapters for different file types. Each adapter can understand the syntax of the file and can detect where i18n code is being used. Adapters will extract those information into `metadata-blocks` that can be consumed by other parts of the i18n process. Adapters will also be able to inject and transform `metadata-blocks` into valid syntax of that file, opening up the possibility for automatic refactoring.
+In order to benefit from automatic checks (e.g. is this translation still used?), we need a way to detect and extract internationalized parts from our source code. To do that we will define `adapters` for different file types. Each adapter can understand the syntax of the file and can detect where i18n code is being used. Adapters will extract those information into `metadata-blocks` that can be consumed by other parts of the i18n process. Adapters will also be able to inject and transform `metadata-blocks` into valid syntax of that file, opening up the possibility for automatic refactoring.
 
 
 ### The i18n pipeline
@@ -144,6 +144,44 @@ export default defineConfig({
 
 As you can see, you could change every part of the config depending on the needs of your team.
 You probably don't want to specify the base configuration at the beginning of your project. The CLI will provide a `pipeli18ne setup` command that will auto-detect some things, ask a few basic questions, install all needed packages and generate a `.pipeli18ne.config.ts` file you can customize further if needed.
+
+### Dictionaries
+
+Most libraries use a simple JSON file for each locale to store translated strings. By choosing another `@pipeli18ne/dictionary-*` package you can use a different format. THe `dictionary` packages could be implemented in a way to not just read the dictionary for a locale from a single file. Some people prefer to co-locate translations for a specific string with all locales or to co-locate translations to the files where it actually get's used. For example a `Button.i18n.json` file could be created in the same folder where the `Button.jsx` file is stored. In combination with the `adapters`, we could even implement a way to inline the translations into the code of the component itself. A `jsx` file could define a variable inside the file like this:
+
+__button.jsx__
+```jsx
+const translations = {
+	en: {
+		'label': 'Click me',
+		'title': 'Click me to do something'
+	},
+	de: {
+		'label': 'Klick mich',
+		'title': 'Klick mich um etwas zu tun'
+	},
+}
+
+export default () => <button title={i18n.title()}>{i18n.label()}</button>
+```
+
+or maybe more XML-like
+
+__homepage.svelte__
+
+```svelte
+<i18n-translation key="homepage.title">
+	<i18n-string locale="en">Welcome to pipeli18ne</i18n-string>
+	<i18n-string locale="de">Willkommen zu pipeli18ne</i18n-string>
+</i18n-translation>
+
+<h1>{i18n.homepage.title()}</h1>
+```
+
+> Those are just examples and the possibilities are endless how exactly the translations could be stored.
+
+Of course this it is bad to load all translations for all languages into the browser. Build-time optimizations would extract the translations and optimize them automatically for you.
+
 
 ### CI/CD automation
 
