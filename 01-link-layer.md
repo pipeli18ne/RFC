@@ -2,9 +2,7 @@
 
 ## Motivation
 
-Internationalization is hard. Most people that have worked on a multilanguage project will confirm that. That should be enough of a motivation.
-
-Ok, you want to hear more?
+Internationalization is hard. Most people that have worked on a multilanguage project will confirm that.
 
 When dealing with multiple languages in a project, you probably want to reach out to an existing library and not implement all edge-cases yourself. But there we have our first problem: what library should we choose? Probably the one that supports the message format our translators use e.g. `ICU`. But some of our team have already a lot of experiences with another library that uses `Fluent` as it's preferred message format. But there is an adapter on top of the library that adds support for ICU. But now suddenly all our users are paying the price to download additional bytes for the runtime code in order to display the page in their language. Lets look for a package that is able to optimize the library code for our production bundles.. well there exist some libraries.. but they are incompatible with our setup.
 
