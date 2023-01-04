@@ -26,6 +26,6 @@ I know already of some projects that want to tackle this problem in a git-first 
 In this chapter we took a short look at the problem of managing translations. We also discussed some ideas on how a translation-service could look like.
 
 Do you like what you've read? Is something still unclear? Do you have other suggestions?
-Head over to the [discussions](https://github.com/pipeli18ne/RFC/discussions) and share your thoughts.
+Head over to the [discussions](https://github.com/pipeli18ne/RFC/discussions/6) and share your thoughts.
 
 In the next chapter we will [take a look at the resuling package structure of this project](https://github.com/pipeli18ne/RFC/blob/main/04-package-structure.md).

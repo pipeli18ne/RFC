@@ -40,7 +40,7 @@ Please go through those chapters if you are interested in. I'm looking forward t
  - The best way to contribute is to share your thoughts in the [discussions](https://github.com/pipeli18ne/RFC/discussions).
  - Write something about the project, share it on social media etc.
  - Just talking with friends and co-workers about this project helps to get a variety of feedback.
- - Do you want to help shaping this project by coding? Just [let me know](https://github.com/pipeli18ne/RFC/discussions). I'm looking for help.
+ - Do you want to help shaping this project by coding? Just [let me know](https://github.com/pipeli18ne/RFC/discussions/7). I'm looking for help.
  - Do you want to sponsor this project. You can use [GitHub Sponsors](https://github.com/sponsors/ivanhofer).
  - Something not listed here? [Open a new discussion](https://github.com/pipeli18ne/RFC/discussions).
 
@@ -60,7 +60,7 @@ And that's why I came up with the idea of this project.
 
 Here are some questions I thought that could arise when reading this.
 
-Still have questions? [Open a new discussion](https://github.com/pipeli18ne/RFC/discussions).
+Still having questions? [Open a new discussion](https://github.com/pipeli18ne/RFC/discussions).
 
 ### Who is this project for?
 

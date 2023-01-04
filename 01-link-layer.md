@@ -56,7 +56,7 @@ The project wants to provide a few defaults at the beginning and eventually add 
 
 When adding internationalization to a project, you'll probably first choose a `library`. That's our first and probably also the biggest building block. That library probably only supports a certain message format. Let's call the message format `accent`, which is another block. You somehow also need to store the strings that get used in your application strings somewhere. Those strings get stored in `dictionaries`, one for each language your application supports. The translations will probably come from non-technical people, that need a intuitive UI to manage all translations. There already exist some `services` your codebase can connect to. In order to offer a great developer experience, TypeScript `types` need to represent the current state of your translations and will show errors if someone makes a mistake. Now we have covered everything needed in our i18n process. But how to combine everything? That will be done with our last building block: the `metadata-blocks`, an object representation of translations combined with additional metadata.
 
-This are the basics. Here is a short summary of the building blocks: [discuss here](https://github.com/pipeli18ne/RFC/discussions)
+This are the basics. Here is a short summary of the building blocks: [discuss here](https://github.com/pipeli18ne/RFC/discussions/5)
 
  - **`library`**: usually responsible for loading translations and storing them in memory, outputting translated messages
  - **`accent`**: the message format your translations are stored in
@@ -194,6 +194,6 @@ The CLI can be used in any CI/CD environment to run pipelines. There is probably
 We now have learned the basics of how a generalized i18n pipeline could look like, what problem it tries to solve and what benefits it brings.
 
 Do you like what you've read? Is something still unclear? Do you have other suggestions?
-Head over to the [discussions](https://github.com/pipeli18ne/RFC/discussions) and share your thoughts.
+Head over to the [discussions](https://github.com/pipeli18ne/RFC/discussions/4) and share your thoughts.
 
 In the next chapter we will [take a look at the `library` problem](https://github.com/pipeli18ne/RFC/blob/main/02-library.md).

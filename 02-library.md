@@ -234,7 +234,7 @@ Because `pipeli18ne` deeply knows about your code and it's structure, it can tra
       const title = `You have {nrOfProjects, p, 1 project, # projects}`
       ```
 
-There are probably also other optimizations that could be done. Let me know in the [discussions](https://github.com/pipeli18ne/RFC/discussions) if you know some.
+There are probably also other optimizations that could be done. Let me know in the [discussions](https://github.com/pipeli18ne/RFC/discussions/1) if you know some.
 
 <!---------------------------------------------------------------------------------------------------------->
 
@@ -284,6 +284,6 @@ console.info(
 In this chapter we have seen what plugins are and how they could improve the developer experience by automatically injecting the boilerplate code into the files that need it. We have also seen how we could support both key-based translations and template-based translations.
 
 Do you like what you've read? Is something still unclear? Do you have other suggestions?
-Head over to the [discussions](https://github.com/pipeli18ne/RFC/discussions) and share your thoughts.
+Head over to the [discussions](https://github.com/pipeli18ne/RFC/discussions/3) and share your thoughts.
 
 In the next chapter we will [take a quick look at the `translation-management` problem](https://github.com/pipeli18ne/RFC/blob/main/03-translation-management.md).
