@@ -105,7 +105,7 @@ And if you take a closer look at both framework examples. They share exactly the
 
 Until now the plugin offers a small improvement over writing the boilerplate code manually. Things will get more interesting when we start thinking about meta-frameworks.
 
-> Meta-frameworks are an opinionated way of building applications on top of a "rendering" framework. Most meta-frameworks offer a variety of output formats like `SSR`, `SSG`, `SPA` etc. Each of those formats has its own requirements and limitations. In order to write an `SSR`-ready application, you will need to consider other things than if you would write it as a `SPA`. In `SSR` applications code will run initially on the server, then the client "hidrates" the application and takes over. Then a lot of code will run on the client. You will always need to consider that and make adjustments to cover both environments in an optimized way.
+> Meta-frameworks are an opinionated way of building applications on top of a "rendering" framework. Most meta-frameworks offer a variety of output formats like `SSR`, `SSG`, `SPA` etc. Each of those formats has its own requirements and limitations. In order to write an `SSR`-ready application, you will need to consider other things than if you would write it as a `SPA`. In `SSR` applications code will run initially on the server, then the client "hydrates" the application and takes over. Then a lot of code will run on the client. You will always need to consider that and make adjustments to cover both environments in an optimized way.
 
 Configuring an i18n library for a meta-framework is not an easy thing. You need to know the meta-framework and the library well enough to know where to put things. Things that will just add boilerplate code, no real functionality. But with a plugin we can get rid of that step.
 
@@ -138,7 +138,7 @@ The request will be passed to the next file that will run on the server.
 
 > Note: locale detection logic will be configured in the `.piepli18ne.config.ts` file
 
-The next file still runs on the server, so we can access the `locals` object an use the translation function from there. But then we need to pass the `locale` to the next rendering steps.
+The next file still runs on the server, so we can access the `locals` object and use the translation function from there. But then we need to pass the `locale` to the next rendering steps.
 
 _+layout.server.ts_
 ```diff
@@ -178,7 +178,7 @@ With the plugin approach we don't have to do any of the steps described above.
 
 Coming to the last file of this example, the actual `.svelte` file:
 
-We get the locale information passed to our `data` prop. Then we need to set the locale of our store. Remember: this file can run both on the server and the client, so to make sure we are using the correct locale, we need to set it here as the very first step before accessing it.
+We get the locale information passed to our `data` prop. Then we need to set the locale of our store. Remember: this file can run both on the server and the client, so to prevent race conditions on the server and to make sure we are using the correct locale, we need to set it here as the very first step before accessing it.
 
 _+layout.svelte_
 ```diff
@@ -196,7 +196,7 @@ _+layout.svelte_
 
 You think this is a lot you need to know and easy to mess up? You're right.
 
-You may think I just picked a framework as an example that has no official i18n support and thats the reason why it is that complicated. But guess what: you'll have to do similar things in other frameworks. Just with another syntax. Even for frameworks like `Next.js`, if you want to support SSR you'll have to add boilerplate code to each page to load the locale information.
+You may think I just picked a framework as an example that has no official i18n support and thats the reason why it is that complicated? But guess what: you'll have to do similar things in other frameworks. Just with another syntax. Even for frameworks like `Next.js`, if you want to support SSR you'll have to add boilerplate code to each page to load the locale information.
 
 > The recently announced version 13 of Next.js may solve that pain point, but you'll still have to structure your code differently if you want to offer SSR then if you would just provide a SPA version of that same application.
 
@@ -206,7 +206,9 @@ A plugin knows about the framework and about the file the i18n code is being use
 
 **Magic!**
 
-> You still can write the code manually if you want. The automatic injection is just a convenience feature. If you would write the boilerplate code yourself, the plugin would not do anything and leave the code untouched.
+### Opt-out of code injection
+
+You still can write the code manually if you want. The automatic injection is just a convenience feature that will probably cover >90% of use-cases. If you would write the boilerplate code yourself, the plugin would not do anything and leave the code untouched.
 
 
 <!---------------------------------------------------------------------------------------------------------->
