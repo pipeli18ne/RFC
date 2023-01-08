@@ -78,6 +78,7 @@ Here is how I imagine the modules and their responsibilities could look like:
 - other tools I could imagine building on top of `pipeli18ne`: [discuss topic](https://github.com/pipeli18ne/RFC/discussions/24)
   - A script that makes screenshots when a developer visits a page with a translation. This screenshot can be sent to the translation service to offer translators more context about the text. Because a "next" on a certain page could have another semantically meaning than a "next" on another page.
   - Real time inline translations. Just edit the text directly on the page and it will be written back to disk or synchronized with the localization service.
+  - Jump directly into the IDE and show the source code if a user clicks on a text.
   - ...
 
 > Community plugins can also be submitted as long as the follow the common API and will follow the "@pipeli18ne-community/[feature]-[name]" naming schema. Is a specific framework missing? You can use the full API to extend `pipeli18ne` however you want

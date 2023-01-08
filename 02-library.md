@@ -7,7 +7,9 @@ Until now we just have seen how we can manage our dictionaries in code, but not 
 
 ## Motivation
 
-Most libraries offer a similar way to output a translation. Where they almost always differ is in the way translations are loaded into memory and how a locale gets set. When using multiple tech-stacks, you probably need to write your code differently for each of them. This is not ideal since it introduces a small learning curve and you will need to maintain multiple ways of doing things.
+If you talk to developers, most time you will hear that handling i18n in an application is a pain. And I agree, it is not accessible enough for developers to use it without blocking their workflow. Probably most developers would wish to just write the application for a single language and let an automated process do the rest. But that's not really possible so you need to add at least a small amount of code to your application to make it work. Most libraries use `key-based` translations where you define `t('loginCTA')` in your code. If you then take a look at the application inside the browser you will see something like `'click here to login'`. When a developer now tries to search where this string get's rendered inside the code, he first needs to find out the mapping between the key and the actual text. This is not ideal. It's not a good developer experience.
+
+Another issue is that each framework requires you to write your code slightly different. You'll probably use different libraries for different frameworks. When using multiple tech-stacks, you probably need to write your code differently for each of them. This is not ideal since it introduces a small learning curve and you will need to maintain multiple ways of doing things.
 
 
 <!---------------------------------------------------------------------------------------------------------->
@@ -15,6 +17,8 @@ Most libraries offer a similar way to output a translation. Where they almost al
 ## Solution
 
 What if the usage of an i18n library would be the same for all frameworks? Nothing new to learn. Just one way to do it. Your i18n code will look the same for all projects. You can reuse your knowledge and code. You can focus on the actual application instead of learning how to use a new i18n library.
+
+This would make internationalizing an application more accessible for developers. Further, the tooling around a library can be improved to offer new capabilities and help developers focusing on the actual code instead of the i18n part.
 
 ### Runtimes
 

@@ -70,6 +70,15 @@ This are the basics. Here is a short summary of the building blocks: [discuss he
 
 In order to benefit from automatic checks (e.g. is this translation still used?), we need a way to detect and extract internationalized parts from our source code. To do that we will define `adapters` for different file types. Each adapter can understand the syntax of the file and can detect where i18n code is being used. Adapters will extract those information into `metadata-blocks` that can be consumed by other parts of the i18n process. Adapters will also be able to inject and transform `metadata-blocks` into valid syntax of that file, opening up the possibility for automatic refactoring.
 
+The `metadata-blocks` that get extracted from the source code will contain some useful information e.g. the file name that can be passed to the translation service, giving a translator more context about the string he is translating. If this is not enough, the `i18n` code you write can optionally be enriched with other meta information.
+
+This could look something like this:
+
+```ts
+i18n.welcome()
+	.meta({ note: 'the welcome message a user sees when he logs in for the first time' })
+```
+
 
 ### The i18n pipeline
 
