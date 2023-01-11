@@ -154,7 +154,7 @@ You probably don't want to specify the base configuration at the beginning of yo
 
 ### Dictionaries
 
-Most libraries use a simple JSON file for each locale to store translated strings. By choosing another `@pipeli18ne/dictionary-*` package you can use a different format. THe `dictionary` packages could be implemented in a way to not just read the dictionary for a locale from a single file. Some people prefer to co-locate translations for a specific string with all locales or to co-locate translations to the files where it actually get's used. For example a `Button.i18n.json` file could be created in the same folder where the `Button.jsx` file is stored. In combination with the `adapters`, we could even implement a way to inline the translations into the code of the component itself. A `jsx` file could define a variable inside the file like this:
+Most libraries use a simple JSON file for each locale to store translated strings. But maybe you wan't to store your translations inside a database? By choosing another `@pipeli18ne/dictionary-*` package you can use a different file-format or location. The `dictionary` packages could be implemented in a way to not just read the dictionary for a locale from a single file. Some people prefer to co-locate translations for a specific string with all locales or to co-locate translations to the files where it actually get's used. For example a `Button.i18n.json` file could be created in the same folder where the `Button.jsx` file is stored. In combination with the `adapters`, we could even implement a way to inline the translations into the code of the component itself. A `jsx` file could define a variable inside the file like this:
 
 __button.jsx__
 ```jsx
