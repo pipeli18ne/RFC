@@ -4,6 +4,16 @@
 
 The goal of this project is to make i18n more accessible to developers. It should be easy to integrate into any project and any workflow.
 
+---
+---
+
+## Update: 2023-04-07
+
+Part of this project will be implemented within [Inlang](https://inlang.com/) project. Read more [here](https://github.com/pipeli18ne/RFC/discussions/26).
+
+---
+---
+
 
 ## The 3 main problems of i18n
 
